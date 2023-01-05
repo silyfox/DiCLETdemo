@@ -39,7 +39,6 @@
   <li><a href="#Comparison">Demos -- Emotional speech synthesis by transferring the emotion from reference audio to within and cross-lingual target speakers</a></li>
   <li><a href="#ablation 4.2.1">Demos -- The necessity of content loss and emotion adaptor</a></li>
   <li><a href="#ablation 4.2.2">Demos -- The effectiveness of condition-enhanced DPM decoder</a></li>
-  <li><a href="#db6 demo">Additional demos -- Transfer emotion to a new target speaker who only has 200 sentences through simple fine-tuning</a></li>
 </ol>
 
 <br><br>
@@ -234,12 +233,7 @@
 </table>
 <h3>Short summary: It can be found that the prosody compensation embedding can provide extra emotion information to the emotion embedding, and the proposed prosody compensation method can effectively improve the emotion transfer performance and mean-while maintain the target speaker’s voice.</a></h2>
 
-<br><br>
-<h2>4. Demos -- The effectiveness of GC block<a name="ablation 4.2.2"></a></h2>
-	<center><img src='emotion_ab.png'></center>
-<h4>As we can see that in terms of the emotion similarity, CSPC obviously outperforms the w/o GC without the GC block.</h3>
-	<center><img src='speaker_ab.png'></center>
-<h4>As we can see that in terms of the speaker similarity, dropping the GC block brings a slight increase which is not obvious.</h3>
+<br>
 <h3>Corresponding to section 4.2.2 in the paper, below lists the samples that are synthesized for presenting the effectiveness of GC block.</h3>
 
 <table>
@@ -317,84 +311,14 @@
   </tbody>
 </table>
 <h3>Short summary: It can be found that in terms of emotional expressiveness, CSPC significantly outperforms the variant w/o GC without significant influence on speaker similarity.</a></h2>
-<br>
-
-<h2> 5. Additional demos -- Transfer emotion to a new target speaker who only has 200 sentences through simple fine-tuning <a name="db6 demo"></a></h2>
-<h3> Following samples are synthesized by transferring the emotion to a target speaker who has only 200 utterances.</h3>
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: center" rowspan=2><strong>Target speaker reference</strong></th>
-      <th style="text-align: center"><strong>Surprise</strong></th>
-      <th style="text-align: center"><strong>Happy</strong></th>
-      <th style="text-align: center"><strong>Sad</strong></th>
-      <th style="text-align: center"><strong>Angry</strong></th>
-      <th style="text-align: center"><strong>Disgust</strong></th>
-      <th style="text-align: center"><strong>Fear</strong></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left" rowspan=1> </td>
-      <td style="text-align: left">Source speaker record<audio src="demo/ref_emo/241722-sur.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left">Source speaker record<audio src="demo/ref_emo/210490-hap.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left">Source speaker record<audio src="demo/ref_emo/231939-sad.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left">Source speaker record<audio src="demo/ref_emo/220353-ang.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left">Source speaker record<audio src="demo/ref_emo/261542-dis.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left">Source speaker record<audio src="demo/ref_emo/250005-fea.wav" controls="" preload=""></audio></td>
-	</tr>
-	<tr>
-	  <td style="text-align: left" rowspan=2><audio src="demo/ex_refspk/f1.wav" controls="" preload=""></audio></td>
-	  <td style="text-align: left" colspan=1>Text: 这么大的一颗子弹！(English: Such a big bullet!)</td>
-	  <td style="text-align: left" colspan=1>Text: 有西瓜吃喽，西瓜西瓜，我的最爱，我都流口水了。(English: There is watermelon to eat, watermelon, watermelon, my favorite, I am drooling.)</td>
-	  <td style="text-align: left" colspan=1>Text: 我的作文，被老师当作笑话看待。(English: My composition is treated as a joke by the teacher.)</td>
-	  <td style="text-align: left" colspan=1>Text: 谁跟你开玩笑！(English: Not joking with you.)</td>
-	  <td style="text-align: left" colspan=1>Text: 把这恶心的东西拿走。(English: Take this disgusting thing away.)</td>
-	  <td style="text-align: left" colspan=1>Text: 求你把枪放下。(English: Please put down the gun.)</td>
-    </tr>
-      <td style="text-align: left">Transfer sample<audio src="demo/ex_demos/f1/210095_sur.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left">Transfer sample<audio src="demo/ex_demos/f1/220068_hap.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left">Transfer sample<audio src="demo/ex_demos/f1/230661_sad.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left">Transfer sample<audio src="demo/ex_demos/f1/240068_ang.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left">Transfer sample<audio src="demo/ex_demos/f1/250260_dis.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left">Transfer sample<audio src="demo/ex_demos/f1/260569_fea.wav" controls="" preload=""></audio></td>
-	</tr>
-	<tr>
-	  <td style="text-align: left" rowspan=2><audio src="demo/ex_refspk/f2.wav" controls="" preload=""></audio></td>
-	  <td style="text-align: left" colspan=1>Text: 什么，大个居然变成石头啦！(English: What? big guy turned to stone!)</td>
-	  <td style="text-align: left" colspan=1>Text: 孩纸还是去上学吧，九年义务教育是一定要完成哒！(English: Children should go to school. The nine-year compulsory education must be completed!)</td>
-	  <td style="text-align: left" colspan=1>Text: 因为他的原因，球队输掉了比赛。(English: Because of him, the team lost the game.)</td>
-	  <td style="text-align: left" colspan=1>Text: 讨厌的东西。(English: Annoying things.)</td>
-	  <td style="text-align: left" colspan=1>Text: 面无表情，看都不想看你。(English: Expressionless, I don't even want to look at you.)</td>
-	  <td style="text-align: left" colspan=1>Text: 我不敢再看，双腿发软。(English: I didn't dare to look again, my legs felt weak.)</td>
-    </tr>
-      <td style="text-align: left">Transfer sample<audio src="demo/ex_demos/f2/210091_sur.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left">Transfer sample<audio src="demo/ex_demos/f2/220060_hap.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left">Transfer sample<audio src="demo/ex_demos/f2/230662_sad.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left">Transfer sample<audio src="demo/ex_demos/f2/240062_ang.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left">Transfer sample<audio src="demo/ex_demos/f2/250266_dis.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left">Transfer sample<audio src="demo/ex_demos/f2/260567_fea.wav" controls="" preload=""></audio></td>
-	</tr>
-	</tr>
-	  <td style="text-align: left" rowspan=2><audio src="demo/ex_refspk/db4.wav" controls="" preload=""></audio></td>
-	  <td style="text-align: left" colspan=1>Text: 天哪！梦中的一切成真了！(English: My god! Everything in the dream came true!)</td>
-	  <td style="text-align: left" colspan=1>Text: 散散步，呼吸下新鲜空气，整个人都神清气爽了呢。(English: Take a walk and get some fresh air, i feel refreshed and refreshed.)</td>
-	  <td style="text-align: left" colspan=1>Text: 我新买的手机，就被我摔碎了屏幕。(English: I smashed the screen of my new mobile phone.)</td>
-	  <td style="text-align: left" colspan=1>Text: 我偏偏要捣乱。(English: I just want to make trouble.)</td>
-	  <td style="text-align: left" colspan=1>Text: 别烦我，从我面前消失。(English: Don't bother me, go where I can't see.)</td>
-	  <td style="text-align: left" colspan=1>Text: 我那颗忐忑不安的心越跳越快。(English: My uneasy heart beats faster and faster.)</td>
-    </tr>
-      <td style="text-align: left">Transfer sample<audio src="demo/ex_demos/db4/210092_sur.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left">Transfer sample<audio src="demo/ex_demos/db4/220062_hap.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left">Transfer sample<audio src="demo/ex_demos/db4/230663_sad.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left">Transfer sample<audio src="demo/ex_demos/db4/240069_ang.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left">Transfer sample<audio src="demo/ex_demos/db4/250268_dis.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left">Transfer sample<audio src="demo/ex_demos/db4/260566_fea.wav" controls="" preload=""></audio></td>
-	</tr>
-  </tbody>
-</table>
-<h3>Short summary: It can be found that the model we proposed can be well generalized to the new target speaker who only has a small amount of data through simple fine-tuning, which transfers the emotion to the new target speaker while maintaining the target speaker’s timbre.</a></h2>
-      <footer class="site-footer">
+  <br><br>
+  <h2>4. Demos -- The effectiveness of GC block<a name="ablation 4.2.2"></a></h2>
+    <center><img src='emotion_ab.png'></center>
+  <h4>As we can see that in terms of the emotion similarity, CSPC obviously outperforms the w/o GC without the GC block.</h3>
+    <center><img src='speaker_ab.png'></center>
+  <h4>As we can see that in terms of the speaker similarity, dropping the GC block brings a slight increase which is not obvious.</h3>      
+    
+    <footer class="site-footer">
         </footer>
       </section>
 </body></html>
