@@ -145,11 +145,11 @@
    
   </tbody>
 </table>
-<h3>Short summary: It can be found that compared with Multi-R, CSET, and PB, the proposed CSPC can achieve a good balance between maintaining the target speaker's timbre and enriching the transferred emotional expression.</a></h2>
+<h3>Short summary: It can be found that compared with M3, CSET, and Grad-TTS, the proposed DiCLET-TTS can achieve a good balance between maintaining the target speaker's timbre and enriching the transferred emotional expression.</a></h2>
 
 <br><br>
-<h2>3. Demos -- The necessity of emotion embedding and prosody compensation<a name="ablation 4.2.1"></a></h2>
-<h3>Corresponding to section 4.2.1 in the paper, samples synthesized by CSPC and also CSPC' variants that without emotion embedding (w/o EE) or prosody compensation embedding (w/o PCE) on the emotion transfer task are listed below.</h3>
+<h2>3. Demos -- The necessity of content loss and emotion adaptor<a name="ablation 4.2.1"></a></h2>
+<h3>Corresponding to section VI-A in the paper, samples synthesized by DiCLET-TTS and also DiCLET-TTS' variants that without content loss (w/o CTL) or emotion adaptor (w/o EA) on the emotion transfer task are listed below.</h3>
 
 <table>
   <thead>
@@ -235,7 +235,8 @@
 <h3>Short summary: It can be found that the prosody compensation embedding can provide extra emotion information to the emotion embedding, and the proposed prosody compensation method can effectively improve the emotion transfer performance and mean-while maintain the target speaker’s voice.</a></h2>
 
 <br>
-<h3>Corresponding to section 4.2.2 in the paper, below lists the samples that are synthesized for presenting the effectiveness of GC block.</h3>
+<h2>4. Demos -- The necessity of emotion adaptor and condition-enhanced DPM decoder<a name="ablation 4.2.1"></a></h2>
+<h3>Corresponding to section VI-B in the paper, samples synthesized by DiCLET-TTS and also DiCLET-TTS' variants that without emotion adaptor (w/o EA) or condition-enhanced DPM decoder (w/o CE-D) on the emotion transfer task are listed below.</h3>
 
 <table>
   <thead>
@@ -312,16 +313,17 @@
    
   </tbody>
 </table>
-<h3>Short summary: It can be found that in terms of emotional expressiveness, DiCLET-TTS significantly outperforms the variant w/o OPL without significant influence on speaker similarity.</a></h2>
+<h3>Short summary: It can be found that in terms of emotional expressiveness, DiCLET-TTS significantly outperforms the variant w/o EA and w/o CE-D without significant influence on speaker similarity.</a></h2>
   <br><br>
-  <h2>4. Demos -- The effectiveness of GC block<a name="ablation 4.2.2"></a></h2>
-    <center><img src='emotion_ab.png'></center>
+  <h2>5. Demos -- The advantages of emotion embedding space with orthogonal projection<a name="ablation 4.2.2"></a></h2>
+    
+  <center><img src='emotion_ab.png'></center>
   <h4>As we can see that in terms of the emotion similarity, CSPC obviously outperforms the w/o GC without the GC block.</h3>
     <center><img src='speaker_ab.png'></center>
   <h4>As we can see that in terms of the speaker similarity, dropping the GC block brings a slight increase which is not obvious.</h3>      
 
     <br>
-    <h3>Corresponding to section 4.2.2 in the paper, below lists the samples that are synthesized for presenting the effectiveness of GC block.</h3>
+    <h3>Corresponding to section VI-C in the paper, below lists the samples that are synthesized for presenting the effectiveness of OPL.</h3>
     
     <table>
       <thead>
@@ -329,8 +331,8 @@
           <th style="text-align: center"><strong>Emotion</strong></th>
           <th style="text-align: center"><strong>Emotion reference</strong></th>
           <th style="text-align: center"><strong>Target speaker reference</strong></th>
-          <th style="text-align: center"><strong> w/o GC </strong></th>
-          <th style="text-align: center"><strong> CSPC (Proposed) </strong></th>
+          <th style="text-align: center"><strong> w/o OPL </strong></th>
+          <th style="text-align: center"><strong> DiCLET-TTS </strong></th>
         </tr>
       </thead>
       <tbody>
@@ -397,7 +399,7 @@
        
       </tbody>
     </table>
-    <h3>Short summary: It can be found that in terms of emotional expressiveness, CSPC significantly outperforms the variant w/o GC without significant influence on speaker similarity.</a></h2>    
+    <h3>Short summary: It can be found that in terms of emotional expressiveness, DiCLET-TTS significantly outperforms the variant w/o OPL without significant influence on emotion similarity.</a></h2>    
     <footer class="site-footer">
         </footer>
       </section>
