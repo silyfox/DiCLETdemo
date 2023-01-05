@@ -37,8 +37,9 @@
 <ol>
   <li><a href="#abstract">Abstract</a></li>
   <li><a href="#Comparison">Demos -- Emotional speech synthesis by transferring the emotion from reference audio to within and cross-lingual target speakers</a></li>
-  <li><a href="#ablation 4.2.1">Demos -- The necessity of content loss and emotion adaptor</a></li>
-  <li><a href="#ablation 4.2.2">Demos -- The effectiveness of condition-enhanced DPM decoder</a></li>
+  <li><a href="#Component analysis VI-A">Demos -- The necessity of content loss and emotion adaptor</a></li>
+  <li><a href="#Component analysis VI-B">Demos -- The effectiveness of condition-enhanced DPM decoder</a></li>
+  <li><a href="#Component analysis VI-C">Demos -- Advantages of emotion embedding space with orthogonal projection</a></li>
 </ol>
 
 <br><br>
@@ -55,7 +56,7 @@
 <br><br>
 
 <h2>2. Demos -- Comparison with other methods<a name="Comparison"></a></h2>
-<h3>Corresponding to section 4.1 in the paper, several samples synthesized by the proposed CSPC and other compared methods on the emotion transfer task are listed below.</h3>
+<h3>Corresponding to section V in the paper, several samples synthesized by the proposed DiCLET-TTS and other compared methods on transferring the emotion from reference audio to within and cross-lingual target speakers are listed below.</h3>
 <table>
   <thead>
     <tr>
@@ -317,7 +318,85 @@
   <h4>As we can see that in terms of the emotion similarity, CSPC obviously outperforms the w/o GC without the GC block.</h3>
     <center><img src='speaker_ab.png'></center>
   <h4>As we can see that in terms of the speaker similarity, dropping the GC block brings a slight increase which is not obvious.</h3>      
+
+    <br>
+    <h3>Corresponding to section 4.2.2 in the paper, below lists the samples that are synthesized for presenting the effectiveness of GC block.</h3>
     
+    <table>
+      <thead>
+        <tr>
+          <th style="text-align: center"><strong>Emotion</strong></th>
+          <th style="text-align: center"><strong>Emotion reference</strong></th>
+          <th style="text-align: center"><strong>Target speaker reference</strong></th>
+          <th style="text-align: center"><strong> w/o GC </strong></th>
+          <th style="text-align: center"><strong> CSPC (Proposed) </strong></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align: left" rowspan=2>Surprise</td>
+        <td style="text-align: left" colspan=2>Text: 啊!真残忍！(English: Aah! How cruel!)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><audio src="demo/ref_emo/241722-sur.wav" controls="" preload=""></audio></td>
+          <td style="text-align: left"><audio src="demo/ref_spk/db2_003491.wav" controls="" preload=""></audio></td>
+          <td style="text-align: left"><audio src="demo/refpc/210096_sur.wav" controls="" preload=""></audio></td>
+          <td style="text-align: left"><audio src="demo/pro/210096_sur.wav" controls="" preload=""></audio></td>
+        </tr>
+        <tr>
+          <td style="text-align: left" rowspan=2>Happy</td>
+        <td style="text-align: left" colspan=2>Text: 姐姐说话温柔细声细气的，给人的感觉态度很好哦。(English: The elder sister speaks softly and softly, which gives people the impression that the attitude is very good.)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><audio src="demo/ref_emo/210490-hap.wav" controls="" preload=""></audio></td>
+          <td style="text-align: left"><audio src="demo/ref_spk/db2_003485.wav" controls="" preload=""></audio></td>
+          <td style="text-align: left"><audio src="demo/refpc/220067_hap.wav" controls="" preload=""></audio></td>
+          <td style="text-align: left"><audio src="demo/pro/220067_hap.wav" controls="" preload=""></audio></td>
+        </tr>
+          <tr>
+          <td style="text-align: left" rowspan=2>Sadness</td>
+        <td style="text-align: left" colspan=2>Text: 我的显示器又花屏了。(English: My monitor is blurred again.)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><audio src="demo/ref_emo/231939-sad.wav" controls="" preload=""></audio></td>
+          <td style="text-align: left"><audio src="demo/ref_spk/db2_003486.wav" controls="" preload=""></audio></td>
+          <td style="text-align: left"><audio src="demo/refpc/230665_sad.wav" controls="" preload=""></audio></td>
+          <td style="text-align: left"><audio src="demo/pro/230665_sad.wav" controls="" preload=""></audio></td>
+        </tr>
+        <tr>
+          <td style="text-align: left" rowspan=2>Angry</td>
+        <td style="text-align: left" colspan=2>Text: 还有什么事！(English: Is there anything else!)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><audio src="demo/ref_emo/220353-ang.wav" controls="" preload=""></audio></td>
+          <td style="text-align: left"><audio src="demo/ref_spk/db2_003488.wav" controls="" preload=""></audio></td>
+          <td style="text-align: left"><audio src="demo/refpc/240061_ang.wav" controls="" preload=""></audio></td>
+          <td style="text-align: left"><audio src="demo/pro/240061_ang.wav" controls="" preload=""></audio></td>
+        </tr>
+       <tr>
+          <td style="text-align: left" rowspan=2>Disgust</td>
+        <td style="text-align: left" colspan=2>Text: 我受不了了，赶紧滚！(English: I can't take it anymore. Get out of here!)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><audio src="demo/ref_emo/261542-dis.wav" controls="" preload=""></audio></td>
+          <td style="text-align: left"><audio src="demo/ref_spk/db2_003491.wav" controls="" preload=""></audio></td>
+          <td style="text-align: left"><audio src="demo/refpc/250267_dis.wav" controls="" preload=""></audio></td>
+          <td style="text-align: left"><audio src="demo/pro/250267_dis.wav" controls="" preload=""></audio></td>
+        </tr>
+        <tr>
+          <td style="text-align: left" rowspan=2>Fear</td>
+        <td style="text-align: left" colspan=2>Text: 我害怕极了，连大气都不敢出。(English: I'm so scared, I don't dare to breathe.)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><audio src="demo/ref_emo/250005-fea.wav" controls="" preload=""></audio></td>
+          <td style="text-align: left"><audio src="demo/ref_spk/db2_003488.wav" controls="" preload=""></audio></td>
+          <td style="text-align: left"><audio src="demo/refpc/260563_fea.wav" controls="" preload=""></audio></td>
+          <td style="text-align: left"><audio src="demo/pro/260563_fea.wav" controls="" preload=""></audio></td>
+        </tr>
+       
+      </tbody>
+    </table>
+    <h3>Short summary: It can be found that in terms of emotional expressiveness, CSPC significantly outperforms the variant w/o GC without significant influence on speaker similarity.</a></h2>    
     <footer class="site-footer">
         </footer>
       </section>
