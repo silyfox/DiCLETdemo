@@ -58,7 +58,120 @@
 <p>To facilitate fair comparison, we particularly select a sentence without apparent emotion (from text) to synthesize emotional speech with different emotions because a sentence with apparent emotion may mislead the listeners to have an unfair judgment on the emotion expressiveness.
 </p>
 <h2>2. Demos -- Comparison with other methods<a name="Comparison"></a></h2>
-<h3>Corresponding to section V in the paper, several samples synthesized by the proposed DiCLET-TTS and other compared methods on transferring the emotion from reference audio to within and cross-lingual target speakers are listed below.</h3>
+<h3>2.1 Corresponding to section V in the paper, several samples synthesized by the proposed DiCLET-TTS and other compared methods on transferring the emotion from reference audio to within-lingual target speaker DB2_cn are listed below.</h3>
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"><strong>Emotion</strong></th>
+      <th style="text-align: center"><strong>Emotion reference</strong></th>
+      <th style="text-align: center"><strong>Target speaker reference</strong></th>
+      <th style="text-align: center"><strong>M3</strong></th>
+      <th style="text-align: center"><strong>CSET</strong></th>
+      <th style="text-align: center"><strong>Grad-TTS</strong></th>
+      <th style="text-align: center"><strong>DiCLET-TTS</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+	<tr>
+    <td style="text-align: left" rowspan=2>Chinese (Neutral)</td>
+	  <td style="text-align: left" colspan=3>Text: 谢谢您，我会争取做得更好，也欢迎你随时来提问。  (English: Thank you. I will try to do better, and you are welcome to ask questions at any time.)</td>
+	</tr>
+	<tr>
+      <td style="text-align: left"><audio src="demo/ref_emo/210490-hap.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/ref_spk/db2_003486.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/multi-r/220063_hap.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/taslp/220063_hap.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/pan/220063_hap.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/pro/220063_hap.wav" controls="" preload=""></audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: left" rowspan=2>English (Neutral)</td>
+      <td style="text-align: left" colspan=3>Text: What? big guy turned to stone!</td>
+    </tr>
+      <tr>
+        <td style="text-align: left"><audio src="demo/ref_emo/241722-sur.wav" controls="" preload=""></audio></td>
+        <td style="text-align: left"><audio src="demo/ref_spk/db2_003485.wav" controls="" preload=""></audio></td>
+        <td style="text-align: left"><audio src="demo/multi-r/210091_sur.wav" controls="" preload=""></audio></td>
+        <td style="text-align: left"><audio src="demo/taslp/210091_sur.wav" controls="" preload=""></audio></td>
+        <td style="text-align: left"><audio src="demo/pan/210091_sur.wav" controls="" preload=""></audio></td>
+        <td style="text-align: left"><audio src="demo/pro/210091_sur.wav" controls="" preload=""></audio></td>
+      </tr>
+      <tr>
+	  <td style="text-align: left" rowspan=2>Surprise</td>
+
+	</tr>
+    <tr>
+      <td style="text-align: left"><audio src="demo/ref_emo/241722-sur.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/ref_spk/db2_003485.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/multi-r/210091_sur.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/taslp/210091_sur.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/pan/210091_sur.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/pro/210091_sur.wav" controls="" preload=""></audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: left" rowspan=2>Happy</td>
+
+	</tr>
+	<tr>
+      <td style="text-align: left"><audio src="demo/ref_emo/210490-hap.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/ref_spk/db2_003486.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/multi-r/220063_hap.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/taslp/220063_hap.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/pan/220063_hap.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/pro/220063_hap.wav" controls="" preload=""></audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: left" rowspan=2>Sadness</td>
+	  
+	</tr>
+	<tr>
+      <td style="text-align: left"><audio src="demo/ref_emo/231939-sad.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/ref_spk/db2_003487.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/multi-r/230664_sad.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/taslp/230664_sad.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/pan/230664_sad.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/pro/230664_sad.wav" controls="" preload=""></audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: left" rowspan=2>Angry</td>
+	  
+	</tr>
+	<tr>
+      <td style="text-align: left"><audio src="demo/ref_emo/220353-ang.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/ref_spk/db2_003488.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/multi-r/240067_ang.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/taslp/240067_ang.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/pan/240067_ang.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/pro/240067_ang.wav" controls="" preload=""></audio></td>
+    </tr>
+   <tr>
+      <td style="text-align: left" rowspan=2>Disgust</td>
+	  
+	</tr>
+	<tr>
+      <td style="text-align: left"><audio src="demo/ref_emo/261542-dis.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/ref_spk/db2_003490.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/multi-r/250264_dis.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/taslp/250264_dis.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/pan/250264_dis.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/pro/250264_dis.wav" controls="" preload=""></audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: left" rowspan=2>Fear</td>
+	 
+	</tr>
+	<tr>
+      <td style="text-align: left"><audio src="demo/ref_emo/250005-fea.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/ref_spk/db2_003491.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/multi-r/260565_fea.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/taslp/260565_fea.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/pan/260565_fea.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="demo/pro/260565_fea.wav" controls="" preload=""></audio></td>
+    </tr>
+   
+  </tbody>
+</table>
+<h3>2.2 Corresponding to section V in the paper, several samples synthesized by the proposed DiCLET-TTS and other compared methods on transferring the emotion from reference audio to cross-lingual target speaker SP1_en are listed below.</h3>
 <table>
   <thead>
     <tr>
