@@ -36,7 +36,7 @@
 <h2>0. Contents</h2>
 <ol>
   <li><a href="#abstract">Abstract</a></li>
-  <li><a href="#Comparison">Demos -- Emotional speech synthesis by transferring the emotion from reference audio to within and cross-lingual target speakers</a></li>
+  <li><a href="#Comparison">Demos -- Emotional speech synthesis by transferring the emotion from reference audio to intra-lingual and cross-lingual target speakers</a></li>
   <li><a href="#Component analysis VI-A">Demos -- The necessity of content loss and emotion adaptor</a></li>
   <li><a href="#Component analysis VI-B">Demos -- The effectiveness of condition-enhanced DPM decoder</a></li>
   <li><a href="#Component analysis VI-C">Demos -- Advantages of emotion embedding space with orthogonal projection</a></li>
@@ -45,11 +45,11 @@
 <br><br>
 <h2 id="abstract">1. Abstract<a name="abstract"></a></h2>
 <p>While the performance of cross-lingual TTS based on monolingual corpora has been significantly improved recently, generating cross-lingual speech still suffers from the foreign accent problem, leading to limited naturalness. Besides, current cross-lingual methods ignore modeling emotion, which is indispensable paralinguistic information in speech delivery.  
-  In this paper, we propose DiCLET-TTS, a Diffusion model based Cross-Lingual Emotion Transfer method that can transfer emotion from a source speaker to the within or cross-lingual target speaker.
+  In this paper, we propose DiCLET-TTS, a Diffusion model based Cross-Lingual Emotion Transfer method that can transfer emotion from a source speaker to the intra-lingual or cross-lingual target speaker.
   Specifically, to relieve the foreign accent problem while improving the emotion expressiveness, the terminal distribution of the diffusion process is parameterized into a speaker-irrelevant but emotion-related linguistic prior by a prior text encoder with the emotion embedding as a condition.
   To address the weaker emotional expressiveness problem caused by speaker disentanglement in emotion embedding, a novel orthogonal projection based emotion disentangling module (OP-EDM) is proposed to learn the speaker-irrelevant but emotion discriminative emotion embedding. 
   Moreover, to effectively guide the speaker and emotion in the generation process, a condition-enhanced DPM decoder is introduced to strengthen the modeling ability of the speaker and the emotion in the reverse diffusion process.
-  Extensive experiments have been conducted on five monolingual corpora. Compared to state-of-the-art methods, the DiCLET-TTS gets the best performance on both cross-lingual and emotion transfer tasks, indicating that the DiCLET-TTS can synthesize reasonable Chinese emotional speech for the within and cross-lingual target speakers, and the advantage of OP-EDM in learning disentangled emotion embedding for emotion transfer. 
+  Extensive experiments have been conducted on five monolingual corpora. Compared to state-of-the-art methods, the DiCLET-TTS gets the best performance on both cross-lingual and emotion transfer tasks, indicating that the DiCLET-TTS can synthesize reasonable Chinese emotional speech for the intra-lingual and cross-lingual target speakers, and the advantage of OP-EDM in learning disentangled emotion embedding for emotion transfer. 
 </p>
 <h3>1.1 The structure of the proposed model:</h3>
 	<center><img src='diclet.png'></center>
@@ -58,7 +58,7 @@
 <p>To facilitate fair comparison, we particularly select a sentence without apparent emotion (from text) to synthesize emotional speech with different emotions because a sentence with apparent emotion may mislead the listeners to have an unfair judgment on the emotion expressiveness.
 </p>
 <h2>2. Demos -- Comparison with other methods<a name="Comparison"></a></h2>
-<h3>2.1 Corresponding to section V in the paper, several samples synthesized by the proposed DiCLET-TTS and other compared methods on transferring the emotion from reference audio to within-lingual target speaker "DB2_cn" are listed below.</h3>
+<h3>2.1 Corresponding to section V in the paper, several samples synthesized by the proposed DiCLET-TTS and other compared methods on transferring the emotion from reference audio to intra-lingual target speaker "DB2_cn" are listed below.</h3>
 <table>
   <thead>
     <tr>
@@ -86,12 +86,12 @@
     </tr>
     <tr>
       <td style="text-align: left" rowspan=2>English (Neutral)</td>
-      <td style="text-align: left" colspan=3>Text: What? big guy turned to stone!</td>
+      <td style="text-align: left" colspan=3>Text: Normally if there is a problem they would rebook there and then. </td>
     </tr>
       <tr>
         <td style="text-align: left"><audio src="demo/ref_emo/ennue_xq.wav" controls="" preload=""></audio></td>
         <td style="text-align: left"><audio src="demo/ref_spk/db2_1.wav" controls="" preload=""></audio></td>
-        <td style="text-align: left"><audio src="demo/multi-r/210091_sur.wav" controls="" preload=""></audio></td>
+        <td style="text-align: left"><audio src="demo/m3/00780_en_db2.wav" controls="" preload=""></audio></td>
         <td style="text-align: left"><audio src="demo/taslp/210091_sur.wav" controls="" preload=""></audio></td>
         <td style="text-align: left"><audio src="demo/pan/210091_sur.wav" controls="" preload=""></audio></td>
         <td style="text-align: left"><audio src="demo/pro/00780_en.wav" controls="" preload=""></audio></td>
